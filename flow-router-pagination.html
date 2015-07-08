@@ -1,7 +1,7 @@
 <template name="paginationBar">
     <label class="minus-button minus">-</label>
-    {{#each pages}}
-    <label page="{{this}}" class="page-button change-page {{selected}}">{{pageNumber}}</label>
+    {{#each pages this.count}}
+        <label page="{{this}}" class="page-button change-page {{selected}}">{{pageNumber}}</label>
     {{/each}}
     <label class="plus-button plus">+</label>
 </template>

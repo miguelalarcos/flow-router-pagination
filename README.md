@@ -7,7 +7,7 @@ Explanation
 Add a pagination widget is as simple as:
 
 ```html
-{{> paginationBar itemsPerPage=3 window=5}}
+{{> paginationBar itemsPerPage=3 window=5 count='total_posts'}}
 ```
 
 where window is the number of pages shown in the pagination bar.

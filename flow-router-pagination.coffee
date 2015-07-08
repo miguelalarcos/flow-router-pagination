@@ -1,7 +1,7 @@
 Template.paginationBar.helpers
-  pages: ->
+  pages: (count) ->
     current = parseInt(FlowRouter.getQueryParam('page')) # ##
-    total = Math.ceil(Counts.get('total_posts')/this.itemsPerPage)
+    total = Math.ceil(Counts.get(count)/this.itemsPerPage)
     paginationBar(this.window, total, current)
   pageNumber: -> this + 1
   selected: ->
