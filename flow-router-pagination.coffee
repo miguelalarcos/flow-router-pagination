@@ -1,19 +1,19 @@
 Template.paginationBar.helpers
   pages: (count) ->
-    current = parseInt(FlowRouter.getQueryParam('page')) # ##
+    current = parseInt(FlowRouter.getQueryParam('page')) or 0
     total = Math.ceil(Counts.get(count)/this.itemsPerPage)
     paginationBar(this.window, total, current)
   pageNumber: -> this + 1
   selected: ->
-    current = parseInt(FlowRouter.getQueryParam('page')) # ##
-    if parseInt(this) == current then 'page-selected' else '' # ##
+    current = parseInt(FlowRouter.getQueryParam('page')) or 0
+    if parseInt(this) == current then 'page-selected' else ''
 
 Template.paginationBar.events
   'click .plus': (e, t) ->
-    current = parseInt(FlowRouter.getQueryParam('page'))
+    current = parseInt(FlowRouter.getQueryParam('page')) or 0
     FlowRouter.setQueryParams({page: current + 1})
   'click .minus': (e, t) ->
-    current = parseInt(FlowRouter.getQueryParam('page'))
+    current = parseInt(FlowRouter.getQueryParam('page')) or 0
     FlowRouter.setQueryParams({page: current - 1})
   'click .change-page': (e, t) ->
     page = $(e.target).attr('page')
