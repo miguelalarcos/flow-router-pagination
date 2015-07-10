@@ -7,6 +7,14 @@ Template.paginationBar.helpers
   selected: ->
     current = parseInt(FlowRouter.getQueryParam('page')) or 0
     if parseInt(this) == current then 'page-selected' else ''
+  showMinus: ->
+    current = parseInt(FlowRouter.getQueryParam('page')) or 0
+    current != 0
+  showPlus: (count) ->
+    current = parseInt(FlowRouter.getQueryParam('page')) or 0
+    total = Math.ceil(Counts.get(count)/this.itemsPerPage)
+    all = paginationBar(this.window, total, current)
+    current != all[-1..][0]
 
 Template.paginationBar.events
   'click .plus': (e, t) ->
