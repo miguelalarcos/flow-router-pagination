@@ -1,0 +1,1 @@
+@posts = new Mongo.Collection 'Posts'

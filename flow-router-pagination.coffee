@@ -30,8 +30,10 @@ paginationBar = (pwindow, total, current) ->
       end = pwindow
     else
       end = total
-  else if end > total
+  else if end >= total
     end = total
     ini = end - pwindow
+    if ini < 0 then ini = 0
+
   [ini...end]
 
