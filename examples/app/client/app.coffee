@@ -1,2 +1,3 @@
 Template.body.helpers
-  posts: -> posts.find({}, {limit: 2, sort: {createdAt: 1}})
+  posts: -> posts.find({}, {limit: limit, sort: {createdAt: 1}})
+  limit: -> limit

@@ -11,6 +11,7 @@ Add a pagination widget is as simple as:
 ```
 
 where window is the number of pages shown in the pagination bar.
+You need to add the package [tmeasday:publish-counts](https://atmospherejs.com/tmeasday/publish-counts).
 
 Then in your server:
 ```coffee
@@ -53,4 +54,10 @@ and the *less* file to style, for example:
 .page-button {
   .box(blue);
 }
+```
+
+If you don't want to harcode the *limit* var in every place it's used, you can define it inside ```client/lib``` folder:
+
+```coffee
+@limit = 3
 ```
