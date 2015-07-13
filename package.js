@@ -1,6 +1,6 @@
 Package.describe({
   name: 'miguelalarcos:flow-router-pagination',
-  version: '0.1.4',
+  version: '0.1.5',
   // Brief, one-line summary of the package.
   summary: 'A simple pagination package for flow-router.',
   // URL to the Git repository containing the source code for this package.

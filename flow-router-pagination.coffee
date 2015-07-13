@@ -17,6 +17,11 @@ Template.paginationBar.helpers
     current != all[-1..][0]
 
 Template.paginationBar.events
+  'click .first': (e, t) ->
+    FlowRouter.setQueryParams({page: 0})
+  'click .last': (e, t) ->
+    total = Math.ceil(Counts.get(this.count)/this.itemsPerPage)
+    FlowRouter.setQueryParams({page: total-1})
   'click .plus': (e, t) ->
     current = parseInt(FlowRouter.getQueryParam('page')) or 0
     FlowRouter.setQueryParams({page: current + 1})
