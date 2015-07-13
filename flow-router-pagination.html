@@ -1,6 +1,6 @@
 <template name="paginationBar">
-    <label class="first-button first">&lt;&lt;</label>
     {{#if showMinus}}
+        <label class="first-button first">&lt;&lt;</label>
         <label class="minus-button minus">-</label>
     {{/if}}
     {{#each pages this.count}}
@@ -8,6 +8,6 @@
     {{/each}}
     {{#if showPlus this.count}}
         <label class="plus-button plus">+</label>
+        <label class="last-button last">&gt;&gt;</label>
     {{/if}}
-    <label class="last-button last">&gt;&gt;</label>
 </template>
